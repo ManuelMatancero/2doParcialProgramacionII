@@ -12,8 +12,10 @@ namespace CapaDatos
 {
     public class D_Persona
     {
+        //Objeto de la clase sqlConnection con el strin connection como parametro
         SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-CS3DG9F;Initial Catalog=AGENDELECTRONIC;Integrated Security=True");
 
+        //metodo para insertar en la base de datos
         public void insertPersona(E_Persona e_Persona)
         {
             conexion.Open();
@@ -28,6 +30,7 @@ namespace CapaDatos
             conexion.Close();
         }
 
+        //Metodo para actualizar o editar un registro
         public void updatePersona(E_Persona e_Persona)
         {
             conexion.Open();
@@ -44,6 +47,8 @@ namespace CapaDatos
 
         }
 
+
+        //metodo eliminar registro
         public void deletePersona(string id)
         {
             conexion.Open();
@@ -54,6 +59,7 @@ namespace CapaDatos
             conexion.Close();
         }
 
+        //metodo para listar los registros en un objeto de tipo list
         public List<E_Persona> listarPersonas(string buscar)
         {
             SqlDataReader leerFilas;
@@ -83,7 +89,7 @@ namespace CapaDatos
             return Listar;
         }
 
-
+        //metodo para mostrar los datos en un dataSet
         public DataSet mostrarDatos()
         {
 

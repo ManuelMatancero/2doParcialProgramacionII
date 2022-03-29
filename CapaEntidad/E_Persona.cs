@@ -8,7 +8,7 @@ namespace CapaEntidad
 {
     public class E_Persona
     {
-
+        //Atributos
         private int idpersona;
         private string codigoPersona;
         private string nombre;
@@ -17,6 +17,7 @@ namespace CapaEntidad
         private DateTime fechaNacimiento;
         private string celular;
 
+        //Atributos get Set
         public int Idpersona { get => idpersona; set => idpersona = value; }
         public string CodigoPersona { get => codigoPersona; set => codigoPersona = value; }
         public string Nombre { get => nombre; set => nombre = value; }
@@ -25,10 +26,11 @@ namespace CapaEntidad
         public DateTime FechaNacimiento { get => fechaNacimiento; set => fechaNacimiento = value; }
         public string Celular { get => celular; set => celular = value; }
 
+        //Cosntructor vacio
         public E_Persona()
         {
         }
-
+        //Constructor
         public E_Persona(string nombre, string apellido, string direccion, DateTime fechaNacimiento, string celular)
         {
             this.Nombre = nombre;
@@ -37,7 +39,7 @@ namespace CapaEntidad
             this.FechaNacimiento = fechaNacimiento;
             this.Celular = celular;
         }
-
+        //Constructor
         public E_Persona(int idpersona, string nombre, string apellido, string direccion, DateTime fechaNacimiento, string celular)
         {
             this.idpersona = idpersona;
@@ -47,7 +49,7 @@ namespace CapaEntidad
             this.fechaNacimiento = fechaNacimiento;
             this.celular = celular;
         }
-
+        //Metodos get y set de la forma tradicional
         public int getIdPersona()
         {
             return this.Idpersona;

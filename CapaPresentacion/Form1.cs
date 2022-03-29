@@ -17,6 +17,7 @@ namespace CapaPresentacion
 {
     public partial class Form1 : Form
     {
+        //variables y objetos
         L_Persona l_Persona = new L_Persona();
         E_Persona e_Persona = null;
         bool estadoInsertar = false;
@@ -29,17 +30,19 @@ namespace CapaPresentacion
             bloqueoCampo();
         }
 
+        //Acciones para el boton Exit
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        //Acciones para el boton minimizar
         private void bunifuImageButton2_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
 
         }
-
+        //Acciones al cargar el form
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -47,7 +50,7 @@ namespace CapaPresentacion
         }
 
 
-
+        //Acciones del boton insertar
         private void btnInsertar_Click(object sender, EventArgs e)
         {
             desbloqueoCampo();
@@ -60,20 +63,21 @@ namespace CapaPresentacion
         }
 
 
-
+        //Metodo que muestra la busqueda
         public void mostrarBusqueda(string buscar)
         {
             tablaPersonas.DataSource = l_Persona.searchPersonaL(buscar);
             tablaPersonas.Columns[0].Visible = false;
         }
 
+        //Acciones, cuando se cambia el texto en txtBuscar
         private void textBuscar_TextChanged(object sender, EventArgs e)
         {
             string busqueda = txtBuscar.Text;
             mostrarBusqueda(busqueda);
 
         }
-
+        //Acciones para el boton guardar
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (estadoInsertar == true)
@@ -110,6 +114,7 @@ namespace CapaPresentacion
             }
         }
 
+        //Metodo para limpiar los textBoxs
         public void limpiar()
         {
             txtNombre.Text = "";
@@ -119,6 +124,7 @@ namespace CapaPresentacion
             txtCelular1.Text = "";
         }
 
+        //Metodo para bloquear los campos de texto y el boton de guardar
         public void bloqueoCampo()
         {
             txtNombre.Enabled = false;
@@ -128,7 +134,7 @@ namespace CapaPresentacion
             txtCelular1.Enabled = false;
             btnGuardar.Enabled = false;
         }
-
+        //Metodo para desbloquear campos y boton guardar
         public void desbloqueoCampo()
         {
             txtNombre.Enabled = true;
@@ -139,6 +145,7 @@ namespace CapaPresentacion
             btnGuardar.Enabled = true;
         }
 
+        //Accciones para el boton eliminar
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             if (idPersona.Equals("0"))
@@ -158,6 +165,7 @@ namespace CapaPresentacion
             }
         }
 
+        //Acciones para el boton editar
         private void btnEditar_Click(object sender, EventArgs e)
         {
             if (idPersona.Equals("0"))
@@ -174,7 +182,7 @@ namespace CapaPresentacion
 
 
         }
-
+        //Acciones realizadas al hacer clic en una de las filas de la tabla
         private void tablaPersonas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (tablaPersonas.SelectedRows.Count > 0)
@@ -193,6 +201,7 @@ namespace CapaPresentacion
 
         }
 
+        //Acciones para el boton cancelar
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             limpiar();
@@ -201,7 +210,8 @@ namespace CapaPresentacion
             estadoEditar = false;
             estadoInsertar = false;
         }
-
+        
+        //Metodo que revisa los campos en busqueda de errores
         private bool checkTextBox()
         {
             bool confirmado;
@@ -237,6 +247,7 @@ namespace CapaPresentacion
             return confirmado;
         }
 
+        //Acciones para el boton que exporta los datos de la tabla a PDF 
         private void btnPDF_Click(object sender, EventArgs e)
         {
             if (tablaPersonas.Rows.Count > 0)
