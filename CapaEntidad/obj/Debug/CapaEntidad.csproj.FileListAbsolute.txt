@@ -1,0 +1,6 @@
+C:\Users\matan\source\repos\AgendaElec2DOParcial\CapaEntidad\bin\Debug\CapaEntidad.dll
+C:\Users\matan\source\repos\AgendaElec2DOParcial\CapaEntidad\bin\Debug\CapaEntidad.pdb
+C:\Users\matan\source\repos\AgendaElec2DOParcial\CapaEntidad\obj\Debug\CapaEntidad.csproj.AssemblyReference.cache
+C:\Users\matan\source\repos\AgendaElec2DOParcial\CapaEntidad\obj\Debug\CapaEntidad.csproj.CoreCompileInputs.cache
+C:\Users\matan\source\repos\AgendaElec2DOParcial\CapaEntidad\obj\Debug\CapaEntidad.dll
+C:\Users\matan\source\repos\AgendaElec2DOParcial\CapaEntidad\obj\Debug\CapaEntidad.pdb
